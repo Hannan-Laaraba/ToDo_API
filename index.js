@@ -1,12 +1,15 @@
 import express from "express";
 import bodyParser from "body-parser";
 import todosRoutes from "./routes/todos.routes.js";
+import cors from "cors";
 
 //Create an express app
 const app = express();
 
 //Apply middlewares
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:false }));
+app.use(cors());
 
 
 //use routes
